@@ -9,5 +9,5 @@ module.exports = {
   "jsxSingleQuote": false,
   "trailingComma": "all",
   "bracketSpacing": true,
-  "arrowParens": "always"
+  "arrowParens": "always",
 }

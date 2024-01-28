@@ -18,7 +18,7 @@ module.exports = {
   },
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', "@typescript-eslint", "prettier"],
+  plugins: ['react-refresh', "@typescript-eslint", "html", "prettier"],
   settings: {
     "react": {
       "version": "detect",
@@ -42,6 +42,7 @@ module.exports = {
       }
     }
   },
+  ignorePatterns: [".eslintrc.cjs", "tailwind.config.js"],
   rules: {
     "import/extensions": [
       "error",
@@ -71,7 +72,13 @@ module.exports = {
     "camelcase": "warn",
     "eqeqeq": "warn",
     "no-console": "warn",
-    "max-len": ["warn", { "code": 100 }],
     "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "enum",
+        "format": ["UPPER_CASE"]
+      }
+    ]
   },
 }
