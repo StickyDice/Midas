@@ -1,26 +1,24 @@
-import { useState } from "react";
+import useClickOutside from "~/shared/hooks/use-click-outside";
 import IAppDropdownProps from "~/shared/ui/app-dropdown/i-app-dropdown-props";
 
 export default function AppDropdown(props: IAppDropdownProps) {
   const { title, children, iconComponent, className } = props;
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [ref, visible, setVisible] = useClickOutside<HTMLDivElement>();
 
   const onDropHandler = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+    setVisible(!visible);
   };
 
   return (
-    <div className="relative">
+    <div className="relative" ref={ref}>
       <button
         onClick={onDropHandler}
         className={`flex items-center bg-transparent ${className}`}
       >
         {title}
-        <div className={isDropdownOpen ? "rotate-180" : ""}>
-          {iconComponent}
-        </div>
+        <div className={visible ? "rotate-180" : ""}>{iconComponent}</div>
       </button>
-      {isDropdownOpen && (
+      {visible && (
         <div className="flex flex-col gap-2 absolute top-8 -left-6 w-max py-4 px-6 bg-black">
           {children.map((item) => item)}
         </div>
