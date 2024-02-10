@@ -83,7 +83,12 @@ module.exports = {
     "camelcase": "warn",
     "eqeqeq": "warn",
     "no-console": "warn",
-    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+      }
+    ],
     "@typescript-eslint/naming-convention": [
       "warn",
       {
