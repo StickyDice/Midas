@@ -1,5 +1,3 @@
-export type UserType = User;
-
 export default class User {
   id: string;
 
@@ -13,7 +11,7 @@ export default class User {
   email?: string;
 
   /* ------------------------------- Constructor ------------------------------ */
-  constructor({ id, name, phoneNumber, email }: UserType) {
+  constructor({ id, name, phoneNumber, email }: User) {
     this.id = id;
     this.name = name;
     this.phoneNumber = phoneNumber;
