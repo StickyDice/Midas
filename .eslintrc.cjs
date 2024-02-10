@@ -61,6 +61,17 @@ module.exports = {
         "devDependencies": true
       }
     ],
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "~/**",
+            "group": "external"
+          }
+        ]
+      } 
+    ],
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
