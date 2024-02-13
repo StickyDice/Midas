@@ -95,6 +95,8 @@ module.exports = {
         "selector": "enum",
         "format": ["UPPER_CASE"]
       }
-    ]
+    ],
+    "eslint/class-methods-use-this:": "off",
+    "import/prefer-default-export": "off"
   },
 }

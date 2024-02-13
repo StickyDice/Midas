@@ -14,10 +14,8 @@ type SignUpStoreType = {
 
 export const updateStoreEvent = createEvent<UpdateStoreType>();
 
-export const resetStore = createEvent();
+export const resetStore = createEvent<void>();
 
 export const signUpStore = createStore<SignUpStoreType>({})
-  .on(updateStoreEvent, (store, params) => {
-    return { ...store, ...params };
-  })
-  .on(resetStore, (_store) => {});
+  .on(updateStoreEvent, (store, params) => ({ ...store, ...params }))
+  .on(resetStore, () => ({}));
